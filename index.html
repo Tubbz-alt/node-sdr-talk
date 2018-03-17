@@ -20,8 +20,145 @@
 <body>
     <div class="reveal">
         <div class="slides">
-            <section>Radio Hacking with SDR and Node.js</section>
-            <section>Slide 2</section>
+            <section data-background-image="img/threerock.jpg">
+                <h2>Radio Hacking with SDR and Node.js</h2>
+            </section>
+
+            <section>
+                <h2>Radio Hacking for the Masses</h2>
+                <p class="fragment">Amateur Radio has been around for well over a century</p>
+                <p class="fragment">You need a license to transmit</p>
+                <p class="fragment">A bar to entry but not impossible</p>
+                <p class="fragment">No license needed to listen though..</p>
+                <p class="fragment">Police scanners, air band radios etc all fine.</p>
+                <aside class="notes">
+                    License needed as spectrums are shared among users.
+                    IRTS - Irish Radio Transmitters Society - Since 1932
+                </aside>
+            </section>
+
+            <section>
+                    <h2>What is SDR?</h2>
+                    <p class="fragment">SDR stands for Software Defined Radio</p>
+                    <p class="fragment">Moves the "complicated" parts of radio from hardware to software.</p>
+                    <p class="fragment">No more signal processing done on chip</p>
+                    <p class="fragment">One radio can now handle widely different radio protocols</p>
+                    <aside class="notes">
+                        A lot of parts to radio, mixing, modulating etc.
+                        Same thing happened to modems if anyone remembers the pain of WinModems on Linux.
+                        Signal processing was moved to software and the hardware became really cheap. 
+                    </aside>
+            </section>
+
+            <section data-background-image="img/sdr.jpg">
+                <h2 style="color: black; margin-top: -280px !important;">RTL-SDR</h2>
+            </section>
+
+            <section>
+                <h2>RTL-SDR</h2>
+                <p>A very cheap, software defined radio that uses a DVB-T TV tuner dongle based on the RTL2832U chipset.</p>
+                <p>Around 2010 - 2012 a discovery was made when writing a Linux driver for the dongle.</p>
+                <p>The RAW radio information (IQ data) was being sent to the host.</p>
+                <p>Quickly became the Swiss army knife of Radio Hackers</p>
+                <aside class="notes">
+                    For anyone interested in the full history, you can find it on http://rtlsdr.org.
+                </aside>
+            </section>
+
+            <section>
+                <h2>Why so popular?</h2>
+                <p class="fragment">Costs roughly €20 dongle + basic antenna</p>
+                <p class="fragment">Listen to any frequency between 24-1800Mhz</p>
+                <p class="fragment">Will do AM/FM and any other modulation once you have the software</p>
+                <p class="fragment">Spectrum no longer limited to Amateur Radio Circles</p>
+                <p class="fragment">Did I mention the price?</p>
+            </section>
+
+            <section>
+                <h2>State of the Art</h2>
+                <p class="fragment">librtlsdr - The actual driver for the dongle</p>
+                <p class="fragment">rtl_* - command line capture tools and utilities</p>
+                <p class="fragment">GNU Radio - A Free and Open-source Toolkit for SDR</p>
+                <p class="fragment">Numerous tools built on the above by the community</p>
+            </section>
+
+            <section>
+                <h1>Cool Examples of SDR Projects</h1>
+            </section>
+
+            <section data-background-image="img/hline.jpeg" data-background-size="contain">
+                <h2>Radio Astronomy</h2>
+                <aside class="notes">
+                    The Radio Astronomy side of SDR is a community in itself. 
+                    The Milky Way is seen to arch across the sky in a giant band. 
+                    The galactic centre which emits strongly is to the bottom right of the picture. 
+                    The local Cygnus - Orion spiral arm (in which we are located) is the red area in the top centre.
+                    Source: https://sites.google.com/site/radioastronomydm/observations/h-line/h-line-maps
+                </aside>
+            </section>
+
+            <section data-background-iframe="https://www.flightradar24.com/53.5,-8/8">
+                <h2>Aircraft Tracking</h2>
+                <aside class="notes">
+                    RTL-SDR can be used to listen to ADS-B signals from aircraft around 1090Mhz.
+                </aside>
+            </section>
+
+            <section data-background-image="img/weathersdr.jpg" data-background-size="contain">
+                <h2 style="margin-top: -280px !important;">Satellite Comms</h2>
+                <aside class="notes">
+                    You can download images from NOAA weather satellites using an SDR tuned around 137Mhz.
+                    You can also receive signals from dead satellites in orbit with the right dish and patience. 
+                    Communication with ISS can also be heard as it passes by. 
+                </aside>
+            </section>
+
+            <section>
+                <h2>TEMPEST</h2>
+                <aside class="notes">
+                        
+                </aside>
+            </section>
+
+            <section>
+                <iframe width=100% height=100% src="https://www.youtube.com/embed/mBJ6uQZsF9c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </section>
+
+            <section>
+                <h2>Node.js + SDR?</h2>
+                <p class="fragment">Small Node.js community but growing</p>
+                <p class="fragment">Makers in the SDR world generally using Python/Matlab etc</p>
+                <p class="fragment">Lack of equivalent modules like numpy, scipy on Node.js make it difficult.</p>
+                <p class="fragment">Pioneers need to build a lot from first principles.</p>
+            </section>
+
+            <section>
+                <h2>How does it work?</h2>
+            </section>
+
+            <section>
+                <h2>Understanding IQ data</h2>
+            </section>
+
+            <section>
+                <h2>Demodulation</h2>
+            </section>
+
+            <section>
+                <h2>My efforts</h2>
+            </section>
+
+            <section>
+                <h2>Goals</h2>
+            </section>
+
+            <section>
+                <h2>The future?</h2>
+            </section>
+
+            <section>
+                <h2>Thanks!</h2>
+            </section>
         </div>
     </div>
     <script src="bower_components/headjs/dist/1.0.0/head.js"></script>
