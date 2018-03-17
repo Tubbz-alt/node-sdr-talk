@@ -1,0 +1,23 @@
+{
+  "name": "node-sdr-talk",
+  "homepage": "https://github.com/nigelhanlon/node-sdr-talk",
+  "authors": [
+    "Nigel Hanlon <nigel.hanlon@nearform.com>"
+  ],
+  "description": "node-sdr-talk slides",
+  "main": "app.js",
+  "keywords": [
+    "node",
+    "sdr",
+    "slides"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
