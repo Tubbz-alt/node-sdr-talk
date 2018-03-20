@@ -25,19 +25,6 @@
             </section>
 
             <section>
-                <h2>Radio Hacking for the Masses</h2>
-                <p class="fragment">Amateur Radio has been around for well over a century</p>
-                <p class="fragment">You need a license to transmit</p>
-                <p class="fragment">A bar to entry but not impossible</p>
-                <p class="fragment">No license needed to listen though..</p>
-                <p class="fragment">Police scanners, air band radios etc all fine.</p>
-                <aside class="notes">
-                    License needed as spectrums are shared among users.
-                    IRTS - Irish Radio Transmitters Society - Since 1932
-                </aside>
-            </section>
-
-            <section>
                     <h2>What is SDR?</h2>
                     <p class="fragment">SDR stands for Software Defined Radio</p>
                     <p class="fragment">Moves the "complicated" parts of radio from hardware to software.</p>
@@ -56,10 +43,10 @@
 
             <section>
                 <h2>RTL-SDR</h2>
-                <p>A very cheap, software defined radio that uses a DVB-T TV tuner dongle based on the RTL2832U chipset.</p>
-                <p>Around 2010 - 2012 a discovery was made when writing a Linux driver for the dongle.</p>
-                <p>The RAW radio information (IQ data) was being sent to the host.</p>
-                <p>Quickly became the Swiss army knife of Radio Hackers</p>
+                <p class="fragment">A very cheap, software defined radio that uses a DVB-T TV tuner dongle based on the RTL2832U chipset.</p>
+                <p class="fragment">Around 2010 - 2012 a discovery was made when writing a Linux driver for the dongle.</p>
+                <p class="fragment">The RAW radio information (IQ data) was being sent to the host.</p>
+                <p class="fragment">Quickly became the Swiss army knife of Radio Hackers</p>
                 <aside class="notes">
                     For anyone interested in the full history, you can find it on http://rtlsdr.org.
                 </aside>
@@ -115,13 +102,16 @@
 
             <section>
                 <h2>TEMPEST</h2>
+                <p>Allows you to record screen radiation via radio and convert back into images</p>
+                <img data-src="img/tempest.jpg" />
                 <aside class="notes">
-                        
+                    See here for more info: https://www.rtl-sdr.com/tempestsdr-a-sdr-tool-for-eavesdropping-on-computer-screens-via-unintentionally-radiated-rf/
+                    Git Repo: https://github.com/martinmarinov/TempestSDR
                 </aside>
             </section>
 
-            <section>
-                <iframe width=100% height=100% src="https://www.youtube.com/embed/mBJ6uQZsF9c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <section style="top: -280px !important; height: 100%; width: 100%;">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/mBJ6uQZsF9c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </section>
 
             <section>
@@ -134,30 +124,58 @@
 
             <section>
                 <h2>How does it work?</h2>
+                <p class="fragment">All implementations rely on a wrapper around librtlsdr.</p>
+                <p class="fragment">Thomas Watson - https://github.com/watson/rtl-sdr</p>
+                <p class="fragment">Methods to tune the receiver, adjust gain etc..</p>
+                <p class="fragment">Data from the receiver is an array of 8 bit unsigned integers</p>
+                <p class="fragment">This data is called IQ or Quadrature information</p>
             </section>
 
             <section>
                 <h2>Understanding IQ data</h2>
+                <p>All signals can be represented using Sin and Cosine waves</p>
+                <img data-src="img/quad.gif" />
+            </section>
+
+            <section>
+                <h2>Quadrature</h2>
+                <p>The SDR receiver has to represent all signals in a universal way.</p>
+                <img data-src="img/sincos.gif" />
             </section>
 
             <section>
                 <h2>Demodulation</h2>
+                <img style="float:left;" data-src="img/AM_FM.gif" />
+                <img style="float:right; height:30%; width:30%;"data-src="img/quad-circle.png" />
             </section>
 
             <section>
                 <h2>My efforts</h2>
+                <p class="fragment">Repo available here: https://github.com/nigelhanlon/node-sdr</p>
+                <p class="fragment">Based on Watson's librtlsdr wrapper and examples</p>
+                <p class="fragment">Can collect SDR hardware info.</p>
+                <p class="fragment">You can tune the receiver and get IQ data.</p>
+                <p class="fragment">Demodulators and Filters very much WIP</p>
             </section>
 
             <section>
                 <h2>Goals</h2>
+                <p class="fragment">To eventually listen to a radio station</p>
+                <p class="fragment">To build a collection of modules for SDR</p>
+                <p class="fragment">To engage the community and hopefully learn more</p>
+                <p class="fragment">Looking at CSDR for inspiration.</p>
             </section>
 
             <section>
                 <h2>The future?</h2>
+                <p class="fragment">SDR in a Web browser?</p>
+                <p class="fragment">Steaming IQ data via Websocket to multiple decoders</p>
+                <p class="fragment">Can Rusty WASM speed things up?</p>
             </section>
 
             <section>
                 <h2>Thanks!</h2>
+                <p class="fragment"></p>
             </section>
         </div>
     </div>
